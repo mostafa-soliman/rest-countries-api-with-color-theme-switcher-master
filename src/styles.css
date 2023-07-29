@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+/* Variables */
+:root {
+  /* Light Mode Text */
+  --Very-Dark-Blue: hsl(200, 15%, 8%);
+  /* Light Mode Input */
+  --Dark-Gray: hsl(0, 0%, 52%);
+  /* Light Mode Background */
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  /* Dark Mode Text & Light Mode Elements nav, card*/
+  --White: hsl(0, 0%, 100%);
+  --WhiteT: hsl(0, 0%, 100%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* @font-face {
+  font-family: Nunito Sans;
+  src: url(/assets/fonts/NunitoSans-Italic-VariableFont_YTLC\,opsz\,wdth\,wght.ttf);
+} */
+
+html {
+  font-size: 16px;
+  /* font-family: Nunito Sans; */
+  color: var(Very-Dark-Blue);
+}
+
+.dark {
+  /* Dark Mode Elements nav , card Dark-Blue*/
+  --White: hsl(209, 23%, 22%);
+  /* Dark Mode Background Very-Dark-Blue */
+  --Very-Light-Gray: hsl(207, 26%, 17%);
+  color: var(--WhiteT);
+}
+body {
+  background-color: var(--Very-Light-Gray);
+}
+
+nav {
+  height: 60px;
+  background-color: var(--White);
+  box-shadow: 0px 5px 10px var(--White);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

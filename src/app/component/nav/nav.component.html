@@ -1,0 +1,16 @@
+<!-- start nav -->
+
+<nav>
+  <div>Where in the world?</div>
+  <div (click)="toggleDarkMode()">
+    <i
+      id="frnt_awsme"
+      [ngClass]="darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"
+    ></i>
+    <input type="checkbox" name="" id="light_dark_mode" hidden />
+    <label (click)="toggleDarkMode()" id="modes" for="light_dark_mode"
+      >Dark Mode</label
+    >
+  </div>
+</nav>
+<!-- end nav -->

@@ -1,1 +1,22 @@
-<p>country works!</p>
+<app-nav></app-nav>
+<a routerLink="">Back</a>
+<figure *ngFor="let country of CountryDetilse" id="card_Cntry">
+  <img [src]="country.flags.png" alt="{{ country.name.common }}" />
+  <figcaption>
+    <h2 class="country_name">{{ country.name.common }}</h2>
+    <p class="p_Population">
+      Population:
+      <!-- toLocaleString() display numbers with commas separating every three digits. -->
+      <span class="s_Population">{{
+        country.population.toLocaleString()
+      }}</span>
+    </p>
+    <p class="p_Region">
+      Region: <span class="s_Region">{{ country.region }}</span>
+    </p>
+    <p class="p_Capital">
+      Capital: <span class="s_Capital">{{ country.capital }}</span>
+    </p>
+  </figcaption>
+</figure>
+<app-footer></app-footer>

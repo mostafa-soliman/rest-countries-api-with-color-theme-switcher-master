@@ -7,9 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FligsComponent } from './component/fligs/fligs.component';
 import { CountryComponent } from './component/country/country.component';
+import { NavComponent } from './component/nav/nav.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, FligsComponent, CountryComponent],
+  declarations: [AppComponent, FligsComponent, CountryComponent, NavComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

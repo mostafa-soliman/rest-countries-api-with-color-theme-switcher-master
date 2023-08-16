@@ -1,19 +1,4 @@
-<!-- start nav -->
-
-<nav>
-  <div>Where in the world?</div>
-  <div (click)="toggleDarkMode()">
-    <i
-      id="frnt_awsme"
-      [ngClass]="darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"
-    ></i>
-    <input type="checkbox" name="" id="light_dark_mode" hidden />
-    <label (click)="toggleDarkMode()" id="modes" for="light_dark_mode"
-      >Dark Mode</label
-    >
-  </div>
-</nav>
-<!-- end nav -->
+<app-nav></app-nav>
 <!-- control sec -->
 <section id="controled" class="controled" (search)="getCuntrySearched($event)">
   <input
@@ -31,33 +16,31 @@
 </section>
 <!--end control sec -->
 <!-- start card -->
-<figure *ngFor="let country of countries" id="card_Cntry">
-  <img [src]="country.flags.png" alt="{{ country.name.common }}" />
-  <figcaption>
-    <h2 class="country_name">{{ country.name.common }}</h2>
-    <p class="p_Population">
-      Population:
-      <!-- toLocaleString() display numbers with commas separating every three digits. -->
-      <span class="s_Population">{{
-        country.population.toLocaleString()
-      }}</span>
-    </p>
-    <p class="p_Region">
-      Region: <span class="s_Region">{{ country.region }}</span>
-    </p>
-    <p class="p_Capital">
-      Capital: <span class="s_Capital">{{ country.capital }}</span>
-    </p>
-  </figcaption>
-</figure>
+<section id="card" class="container">
+  <figure
+    *ngFor="let country of countries"
+    id="card_Cntry"
+    (click)="getCuntryDetail(country.name.common)"
+    [routerLink]="['/detail', country.name.common]"
+  >
+    <img [src]="country.flags.png" alt="{{ country.name.common }}" />
+    <figcaption>
+      <h2 class="country_name">{{ country.name.common }}</h2>
+      <p class="p_Population">
+        Population:
+        <!-- toLocaleString() display numbers with commas separating every three digits. -->
+        <span class="s_Population">{{
+          country.population.toLocaleString()
+        }}</span>
+      </p>
+      <p class="p_Region">
+        Region: <span class="s_Region">{{ country.region }}</span>
+      </p>
+      <p class="p_Capital">
+        Capital: <span class="s_Capital">{{ country.capital }}</span>
+      </p>
+    </figcaption>
+  </figure>
+</section>
 <!-- end card -->
-<!-- footer -->
-<footer class="attribution">
-  Challenge by
-  <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-    >Frontend Mentor</a
-  >. Coded by
-  <a href="https://www.linkedin.com/in/mostafa-soliman-fadali/" target="_blank"
-    >mostafa soliman fadali</a
-  >.
-</footer>
+<app-footer></app-footer>
